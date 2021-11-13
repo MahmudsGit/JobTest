@@ -29,6 +29,15 @@
       ),
       'reference' => 'f73543ac4e1def05f1a70bcd1525c8a157a1ad09',
     ),
+    'brian2694/laravel-toastr' => 
+    array (
+      'pretty_version' => '5.56',
+      'version' => '5.56.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '98137445f55d981f3587800349f1aa7b045d7974',
+    ),
     'brick/math' => 
     array (
       'pretty_version' => '0.9.3',

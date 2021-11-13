@@ -1,5 +1,10 @@
 <?php
 
+use App\Http\Controllers\OrderController;
+use App\Http\Controllers\PalindromeController;
+use App\Http\Controllers\QueryOneController;
+use App\Http\Controllers\QueryTwoController;
+use App\Http\Controllers\SellerController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,5 +23,13 @@ Route::get('/', function () {
 });
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
+    return view('custom-dashboard/dashboard');
 })->name('dashboard');
+
+Route::group(['prefix'=> 'dashboard', 'middleware'=>'auth'], function (){
+    Route::resource('/seller', SellerController::class);
+    Route::resource('/order', OrderController::class);
+    Route::resource('/query/one', QueryOneController::class);
+    Route::resource('/query/two', QueryTwoController::class);
+});
+
