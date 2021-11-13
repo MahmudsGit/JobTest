@@ -66,7 +66,7 @@
                 <h3>Tasks 5</h3>
                 <ul class="nav side-menu">
                     <li>
-                        <a href="#"><i class="fa fa-table"></i> JAVASCRIPT FUNCTION </a>
+                        <a href="{{ asset('javascript.php') }}" target="_blank"><i class="fa fa-table"></i> JAVASCRIPT FUNCTION </a>
                     </li>
                 </ul>
             </div>

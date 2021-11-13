@@ -11,32 +11,35 @@
     <div style="text-align: center;">
         <h1>
             <?php
-                if (isset($_POST['check'])) {
+                function palindromeFunction(){
+                $palindrome = $_POST['number'];
 
-                    $palindrome = $_POST['number'];
+                $revPalindrome = strrev($palindrome);
 
-                    $revPalindrome = strrev($palindrome);
+                if ($palindrome == $revPalindrome){
+                    $palindromeLength = strlen($palindrome);
 
-                    if ($palindrome == $revPalindrome){
-                        $palindromeLength = strlen($palindrome);
-
-                        $result = 0;
-                        for ($i  = 2; $i < $palindromeLength; $i++){
-                            if ($palindromeLength % $i == 0){
-                                $result = 1;
-                                break;
-                            }
+                    $result = 0;
+                    for ($i  = 2; $i < $palindromeLength; $i++){
+                        if ($palindromeLength % $i == 0){
+                            $result = 1;
+                            break;
                         }
-                        if ($result == 0){
-                            echo "Yes";
-                        }else{
-                            echo "$palindrome is not Prime";
-                        }
-
-                    }else{
-                        echo "$palindrome is not Palindrome";
                     }
+                    if ($result == 0){
+                        echo "Yes";
+                    }else{
+                        echo "$palindrome is not Prime";
+                    }
+
+                }else{
+                    echo "$palindrome is not Palindrome";
                 }
+            }
+
+            if (isset($_POST['check'])) {
+                palindromeFunction();
+            }
             ?>
         </h1>
     </div>
